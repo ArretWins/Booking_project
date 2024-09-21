@@ -1,1 +1,2 @@
 from locators.main_page_locators import MainLocators
+from locators.register_page_locators import RegisterLocators

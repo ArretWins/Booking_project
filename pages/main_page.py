@@ -1,3 +1,5 @@
+import time
+
 from selenium.common import NoSuchElementException, TimeoutException
 
 from helpers import BASE_URL
@@ -16,11 +18,21 @@ class MainPage(BasePage, MainLocators):
     @allure.step('Open main page')
     def open(self):
         self.open_page(BASE_URL)
-        self.add_cookies('ALWCS', '0')
-        self.add_cookies('CBARIH', '1')
-        self.driver.refresh()
 
     @allure.step('Assert that main page is opened')
     def assert_main_page_is_opened(self):
+        # time.sleep(10)
         self.get_element(self.HEADER_LOGO)
+        self.get_element(self.SIGN_UP_BUTTON)
+        self.get_element(self.SIGN_IN_BUTTON)
+        self.get_element(self.CURRENCY_BUTTON)
+        self.get_element(self.LANGUAGE_BUTTON)
+
+    @allure.title('Open register page')
+    def open_register_page(self):
+        self.click(self.SIGN_UP_BUTTON)
+
+    @allure.title('Open sing in page')
+    def open_register_page(self):
+        self.click(self.SIGN_IN_BUTTON)
 
