@@ -78,3 +78,33 @@ class TestRegister:
         register_page.input_long_confirm_password_to_register()
         register_page.click_continue_button('password')
         register_page.assert_alert_message('match')
+
+    @allure.title('Assert facebook login')
+    def test_facebook_login(self, driver):
+        main_page = MainPage(driver)
+        main_page.open()
+        main_page.open_login_page()
+
+        login_page = RegisterPage(driver)
+        login_page.click_social_login('Facebook')
+        login_page.assert_that_social_login_page_is_opened('Facebook')
+
+    @allure.title('Assert google login')
+    def test_google_login(self, driver):
+        main_page = MainPage(driver)
+        main_page.open()
+        main_page.open_login_page()
+
+        login_page = RegisterPage(driver)
+        login_page.click_social_login('Google')
+        login_page.assert_that_social_login_page_is_opened('Google')
+
+    @allure.title('Assert apple login')
+    def test_apple_login(self, driver):
+        main_page = MainPage(driver)
+        main_page.open()
+        main_page.open_login_page()
+
+        login_page = RegisterPage(driver)
+        login_page.click_social_login('Apple')
+        login_page.assert_that_social_login_page_is_opened('Apple')

@@ -32,7 +32,7 @@ class MainPage(BasePage, MainLocators):
     def open_register_page(self):
         self.click(self.SIGN_UP_BUTTON)
 
-    @allure.title('Open sing in page')
-    def open_register_page(self):
+    @allure.title('Open login page')
+    def open_login_page(self):
         self.click(self.SIGN_IN_BUTTON)
 

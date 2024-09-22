@@ -13,4 +13,15 @@ class RegisterLocators:
     SHOW_CONFIRM_INPUT = (By.XPATH, '//button[@aria-controls="confirmed_password"]')
     PASSWORD_CONFIRM_INPUT = (By.XPATH, '//input[@name="confirmed_password"]')
 
+    CONFIRM_EMAIL_BUTTON = (By.XPATH, '//button[@type="submit"]')
+
+    FACEBOOK_LOGIN_BUTTON = (By.XPATH, '//a[contains(@class, "access-panel__social-button-facebook")]')
+    FACEBOOK_LOGO = (By.XPATH, '//a[@href="https://www.facebook.com/"]')
+
+    GOOGLE_LOGIN_BUTTON = (By.XPATH, '//a[contains(@class, "access-panel__social-button-google")]')
+    GOOGLE_INPUT = (By.XPATH, '//input[@id="identifierId"]')
+
+    APPLE_LOGIN_BUTTON = (By.XPATH, '//a[contains(@class, "access-panel__social-button-apple")]')
+    APPLE_INPUT = (By.XPATH, '//input[@id="account_name_text_field"]')
+
 

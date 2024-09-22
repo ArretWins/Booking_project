@@ -21,6 +21,18 @@ class RegisterPage(BasePage, RegisterLocators):
             self.get_element(self.PASSWORD_INPUT)
             self.click(self.CONTINUE_BUTTON)
 
+    @allure.step('Click to social login')
+    def click_social_login(self, social):
+        if social == 'Facebook':
+            self.click(self.FACEBOOK_LOGIN_BUTTON)
+            time.sleep(2)
+        elif social == 'Google':
+            self.click(self.GOOGLE_LOGIN_BUTTON)
+            time.sleep(2)
+        elif social == 'Apple':
+            self.click(self.APPLE_LOGIN_BUTTON)
+            time.sleep(2)
+
     @allure.step('Input email to register')
     def input_email_to_register(self):
         self.fill(self.EMAIL_INPUT, 'testbookingemail@gmail.com')
@@ -41,6 +53,9 @@ class RegisterPage(BasePage, RegisterLocators):
     def assert_register_page_is_opened(self):
         self.get_element(self.EMAIL_INPUT)
         self.get_element(self.CONTINUE_BUTTON)
+        self.get_element(self.FACEBOOK_LOGIN_BUTTON)
+        self.get_element(self.GOOGLE_LOGIN_BUTTON)
+        self.get_element(self.APPLE_LOGIN_BUTTON)
 
     @allure.step('Assert that alert message is displayed')
     def assert_alert_message(self, page):
@@ -58,3 +73,15 @@ class RegisterPage(BasePage, RegisterLocators):
         self.get_element(self.PASSWORD_INPUT)
         self.get_element(self.PASSWORD_CONFIRM_INPUT)
         self.get_element(self.CONTINUE_BUTTON)
+
+    @allure.step('Assert that social login page is opened')
+    def assert_that_social_login_page_is_opened(self, social):
+        windows = self.driver.window_handles
+        self.driver.switch_to.window(windows[-1])
+        time.sleep(1)
+        if social == 'Facebook':
+            self.get_element(self.FACEBOOK_LOGO)
+        elif social == 'Google':
+            self.get_element(self.GOOGLE_INPUT)
+        elif social == 'Apple':
+            self.get_element(self.APPLE_INPUT)
