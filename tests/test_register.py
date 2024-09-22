@@ -83,7 +83,7 @@ class TestRegister:
     def test_facebook_login(self, driver):
         main_page = MainPage(driver)
         main_page.open()
-        main_page.open_login_page()
+        main_page.open_register_page()
 
         login_page = RegisterPage(driver)
         login_page.click_social_login('Facebook')
@@ -93,7 +93,7 @@ class TestRegister:
     def test_google_login(self, driver):
         main_page = MainPage(driver)
         main_page.open()
-        main_page.open_login_page()
+        main_page.open_register_page()
 
         login_page = RegisterPage(driver)
         login_page.click_social_login('Google')
@@ -103,7 +103,7 @@ class TestRegister:
     def test_apple_login(self, driver):
         main_page = MainPage(driver)
         main_page.open()
-        main_page.open_login_page()
+        main_page.open_register_page()
 
         login_page = RegisterPage(driver)
         login_page.click_social_login('Apple')
