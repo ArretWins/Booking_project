@@ -7,6 +7,7 @@ class MainLocators:
     SIGN_IN_BUTTON = (By.XPATH, '//a[@data-testid="header-sign-in-button"]')
     DECLINE_COOKIES_BUTTON = (By.XPATH, '//button[@id="onetrust-reject-all-handler"]')
     DISMISS_BUTTON = (By.XPATH, '//button[@aria-label="Dismiss sign-in info."]')
+    DEU_DISMISS_BUTTON = (By.XPATH, '//button[@aria-label="Informationen zur Anmeldung ausblenden."]')
 
     CURRENCY_BUTTON = (By.XPATH, '//button[@data-testid="header-currency-picker-trigger"]')
     CZK_CURRENCY = (By.XPATH, '//div[text()="CZK"]')
@@ -17,4 +18,5 @@ class MainLocators:
     LANGUAGE_BUTTON = (By.XPATH, '//button[@data-testid="header-language-picker-trigger"]')
     ENGLISH_BUTTON = (By.XPATH, '//span[text()="English (UK)"]')
     DEUTSCH_BUTTON = (By.XPATH, '//span[text()="Deutsch"]')
-
+    ENGLISH_TEXT_SPAN = (By.XPATH, '//span[text()="List your property"]')
+    DEUTSCH_TEXT_SPAN = (By.XPATH, '//span[text()="Ihre Unterkunft anmelden"]')

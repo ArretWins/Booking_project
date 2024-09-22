@@ -31,3 +31,25 @@ class TestMain:
         main_page.click_currency_button()
         main_page.change_currency('EUR')
         main_page.assert_change_of_currency('EUR')
+
+    @allure.title('Change language to DEUTSCH')
+    def test_of_change_language_to_deutsch(self, driver):
+        main_page = MainPage(driver)
+        main_page.open()
+        main_page.click_language_button()
+        main_page.change_language('DEU')
+        driver.refresh()
+        main_page.assert_change_of_language('DEU')
+
+    @allure.title('Change language from DEUTSCH to ENGLISH')
+    def test_of_change_language_to_english(self, driver):
+        main_page = MainPage(driver)
+        main_page.open()
+        main_page.click_language_button()
+        main_page.change_language('DEU')
+        driver.refresh()
+        main_page.click_dismiss_button('DEU')
+        main_page.click_language_button()
+        main_page.change_language('ENG')
+        driver.refresh()
+        main_page.assert_change_of_language('ENG')

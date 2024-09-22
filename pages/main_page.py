@@ -18,8 +18,6 @@ class MainPage(BasePage, MainLocators):
     @allure.step('Open main page')
     def open(self):
         self.open_page(BASE_URL)
-        # time.sleep(15)
-        # self.get_element(self.DECLINE_COOKIES_BUTTON)
         self.click(self.DECLINE_COOKIES_BUTTON)
 
     @allure.title('Open register page')
@@ -30,9 +28,23 @@ class MainPage(BasePage, MainLocators):
     def click_currency_button(self):
         self.click(self.CURRENCY_BUTTON)
 
+    @allure.step('Click to language button')
+    def click_language_button(self):
+        self.click(self.LANGUAGE_BUTTON)
+
     @allure.step('Click to dismiss button')
-    def click_dismiss_button(self):
-        self.click(self.DISMISS_BUTTON)
+    def click_dismiss_button(self, language='ENG'):
+        if language == 'ENG':
+            self.click(self.DISMISS_BUTTON)
+        elif language == 'DEU':
+            self.click(self.DEU_DISMISS_BUTTON)
+
+    @allure.step('Change_language')
+    def change_language(self, language):
+        if language == 'DEU':
+            self.click(self.DEUTSCH_BUTTON)
+        elif language == 'ENG':
+            self.click(self.ENGLISH_BUTTON)
 
     @allure.step('Change currency')
     def change_currency(self, currency):
@@ -64,5 +76,9 @@ class MainPage(BasePage, MainLocators):
         elif currency == 'EUR':
             self.get_element(self.MAIN_PAGE_EUR_CURRENCY)
 
-
-
+    @allure.step('Assert that language is changed')
+    def assert_change_of_language(self, language):
+        if language == 'DEU':
+            self.get_element(self.DEUTSCH_TEXT_SPAN)
+        elif language == 'ENG':
+            self.get_element(self.ENGLISH_TEXT_SPAN)
