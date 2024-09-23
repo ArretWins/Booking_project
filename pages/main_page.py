@@ -61,6 +61,32 @@ class MainPage(BasePage, MainLocators):
             except (ElementClickInterceptedException, TimeoutException):
                 print("Element click intercepted(didn't find dismiss element)")
 
+    @allure.step('Search place')
+    def search_place(self):
+        self.fill(self.PLACE_SEARCH_INPUT, 'Bratislava')
+        try:
+            self.click_dismiss_button()
+        except (ElementClickInterceptedException, TimeoutException):
+            print("Element click intercepted(didn't find dismiss element)")
+
+    @allure.step('Choose time')
+    def choose_time(self):
+        self.click(self.DATES_SEARCH_INPUT)
+        self.click(self.FLEXIBLE_DATES_BUTTON)
+        self.click(self.WEEKENDS_BUTTON, True)
+        self.click(self.SEPTEMBER_BUTTON)
+        self.click(self.CHOOSE_TIME_BUTTON)
+
+    @allure.step('Choose occupancy')
+    def choose_occupancy(self):
+        self.click(self.OCCUPANCY_INPUT)
+        self.click(self.PLUS_BUTTON)
+        self.click(self.OCCUPANCY_BUTTON)
+
+    @allure.step('Click search button')
+    def click_search_button(self):
+        self.click(self.SEARCH_PLACE_BUTTON)
+
     @allure.step('Assert that main page is opened')
     def assert_main_page_is_opened(self):
         self.get_element(self.HEADER_LOGO)
@@ -82,3 +108,11 @@ class MainPage(BasePage, MainLocators):
             self.get_element(self.DEUTSCH_TEXT_SPAN)
         elif language == 'ENG':
             self.get_element(self.ENGLISH_TEXT_SPAN)
+
+    @allure.step('Assert that place search works')
+    def assert_place_search(self):
+        self.get_element(self.PLACE_CONTAINER)
+
+    @allure.step('Assert void place search alert')
+    def assert_void_search_alert(self):
+        self.get_element(self.SEARCHBOX_ALERT)

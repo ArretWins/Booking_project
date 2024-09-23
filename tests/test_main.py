@@ -53,3 +53,21 @@ class TestMain:
         main_page.change_language('ENG')
         driver.refresh()
         main_page.assert_change_of_language('ENG')
+
+    @allure.title('Search hotel in Bratislava to whole September')
+    def test_search_hotel(self, driver):
+        main_page = MainPage(driver)
+        main_page.open()
+        # driver.refresh()
+        main_page.search_place()
+        main_page.choose_time()
+        main_page.choose_occupancy()
+        main_page.click_search_button()
+        main_page.assert_place_search()
+
+    @allure.title('Search hotel without place')
+    def test_void_hotel_search(self, driver):
+        main_page = MainPage(driver)
+        main_page.open()
+        main_page.click_search_button()
+        main_page.assert_void_search_alert()

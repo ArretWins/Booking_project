@@ -20,3 +20,19 @@ class MainLocators:
     DEUTSCH_BUTTON = (By.XPATH, '//span[text()="Deutsch"]')
     ENGLISH_TEXT_SPAN = (By.XPATH, '//span[text()="List your property"]')
     DEUTSCH_TEXT_SPAN = (By.XPATH, '//span[text()="Ihre Unterkunft anmelden"]')
+
+    PLACE_SEARCH_INPUT = (By.XPATH, '//input[@id=":rh:"]')
+    DATES_SEARCH_INPUT = (By.XPATH, '//div[@data-testid="searchbox-dates-container"]')
+    FLEXIBLE_DATES_BUTTON = (By.XPATH, '//button[@aria-controls="flexible-searchboxdatepicker"]')
+    WEEKENDS_BUTTON = (By.XPATH, '//span[@class="c907c67d20"]')
+    SEPTEMBER_BUTTON = (By.XPATH, '//span[@class="cac967781c"]')
+    CHOOSE_TIME_BUTTON = (By.XPATH, '//button[contains(@class, "c994bb94f3")]')
+
+    OCCUPANCY_INPUT = (By.XPATH, '//button[@data-testid="occupancy-config"]')
+    PLUS_BUTTON = (By.XPATH, '//button[contains(@class, "f4d78af12a")]')
+    OCCUPANCY_BUTTON = (By.XPATH, '//button[contains(@class, "c213355c26 b9fd3c6b3c")]')
+
+    SEARCH_PLACE_BUTTON = (By.XPATH, '//button[contains(@class, "cceeb8986b b9fd3c6b3c")]')
+    SEARCHBOX_ALERT = (By.XPATH, '//div[@data-testid="searchbox-alert"]')
+    PLACE_CONTAINER = (By.XPATH, '//div[contains(@class, "c82435a4b8 a178069f51")]')
+
