@@ -71,3 +71,10 @@ class TestMain:
         main_page.open()
         main_page.click_search_button()
         main_page.assert_void_search_alert()
+
+    @allure.title('Redirect to "Go to gate" service')
+    def test_void_hotel_search(self, driver):
+        main_page = MainPage(driver)
+        main_page.open()
+        main_page.click_flights()
+        main_page.assert_redirect('flights')

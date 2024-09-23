@@ -32,6 +32,10 @@ class MainPage(BasePage, MainLocators):
     def click_language_button(self):
         self.click(self.LANGUAGE_BUTTON)
 
+    @allure.step('Click to flights button')
+    def click_flights(self):
+        self.click(self.FLIGHTS)
+
     @allure.step('Click to dismiss button')
     def click_dismiss_button(self, language='ENG'):
         if language == 'ENG':
@@ -116,3 +120,8 @@ class MainPage(BasePage, MainLocators):
     @allure.step('Assert void place search alert')
     def assert_void_search_alert(self):
         self.get_element(self.SEARCHBOX_ALERT)
+
+    @allure.step('Assert redirect to another page')
+    def assert_redirect(self, page):
+        if page == 'flights':
+            self.get_element(self.GO_TO_GATE_LOGO)

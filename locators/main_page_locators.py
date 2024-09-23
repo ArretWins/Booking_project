@@ -5,6 +5,10 @@ class MainLocators:
     HEADER_LOGO = (By.XPATH, '//a[@data-testid="header-booking-logo"]')
     SIGN_UP_BUTTON = (By.XPATH, '//a[@data-testid="header-sign-up-button"]')
     SIGN_IN_BUTTON = (By.XPATH, '//a[@data-testid="header-sign-in-button"]')
+    FLIGHTS = (By.XPATH, '//a[@id="flights"]')
+    GO_TO_GATE_LOGO = (By.XPATH, '//header[@class="css-17vgg1c"]')
+    FLIGHTS_PLUS_HOTELS = (By.XPATH, '//a[@id="packages"]')
+
     DECLINE_COOKIES_BUTTON = (By.XPATH, '//button[@id="onetrust-reject-all-handler"]')
     DISMISS_BUTTON = (By.XPATH, '//button[@aria-label="Dismiss sign-in info."]')
     DEU_DISMISS_BUTTON = (By.XPATH, '//button[@aria-label="Informationen zur Anmeldung ausblenden."]')
